@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { GiphyService } from './giphy.service';
+import { CustomMaterialModule } from './custom-material/custom-material.module';
 
 
 @NgModule({
@@ -10,9 +12,11 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    CustomMaterialModule
   ],
-  providers: [],
+  providers: [GiphyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
