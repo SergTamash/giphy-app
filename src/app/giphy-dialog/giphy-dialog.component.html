@@ -1,0 +1,18 @@
+<h1 mat-dialog-title class="dialog-title">{{data.title}}</h1>
+<div mat-dialog-content>
+  <div class="img-container">
+    <img src="{{data.images.fixed_height.url}}" alt="{{data.title}}">
+  </div>
+  <ul>
+    <li>
+      URL: <a href="{{data.url}}">{{data.url}}</a>
+    </li>
+    <li>
+      Rating: {{data.rating}}
+    </li>
+    <li>
+      Import date: {{data.import_datetime}}
+    </li>
+  </ul>
+</div>
+<button mat-button [mat-dialog-close]="true" color="primary">Close</button>

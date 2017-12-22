@@ -1,0 +1,6 @@
+.dialog-title, .img-container {
+  text-align: center;
+}
+.img-container img {
+  max-width: 100%;
+}
