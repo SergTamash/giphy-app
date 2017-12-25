@@ -15,7 +15,7 @@ export class GiphyService {
       this.offset = 0;
     }
     this.oldRequest = request;
-    const url = 'http://api.giphy.com/v1/gifs/search?q=' + this.oldRequest + '&api_key='
+    const url = 'https://api.giphy.com/v1/gifs/search?q=' + this.oldRequest + '&api_key='
       + this.giphyKey + '&limit=' + this.limit + '&offset=' + this.offset;
     return this.http.get(url)
                     .toPromise();
