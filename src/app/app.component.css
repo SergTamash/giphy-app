@@ -1,0 +1,12 @@
+.giphy-container {
+  text-align:center;
+  min-height: 1000px;
+}
+mat-grid-list {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.gif-img {
+  background: darkgrey;
+}

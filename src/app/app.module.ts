@@ -5,16 +5,22 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { GiphyService } from './giphy.service';
 import { CustomMaterialModule } from './custom-material/custom-material.module';
-
+import { InfiniteScrollModule } from 'angular2-infinite-scroll';
+import { GiphyDialogComponent } from './giphy-dialog/giphy-dialog.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GiphyDialogComponent
+  ],
+  entryComponents: [
+    GiphyDialogComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    CustomMaterialModule
+    CustomMaterialModule,
+    InfiniteScrollModule
   ],
   providers: [GiphyService],
   bootstrap: [AppComponent]
