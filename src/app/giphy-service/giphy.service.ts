@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class GiphyService {
   private giphyKey = 'dc6zaTOxFJmzC';
-  private limit = 20;
+  private limit = 40;
   private oldRequest: string;
   private offset = 0;
 
@@ -15,6 +15,9 @@ export class GiphyService {
       this.offset = 0;
     }
     this.oldRequest = request;
+    if (!request) {
+      this.oldRequest = '';
+    }
     const url = 'https://api.giphy.com/v1/gifs/search?q=' + this.oldRequest + '&api_key='
       + this.giphyKey + '&limit=' + this.limit + '&offset=' + this.offset;
     return this.http.get(url)
@@ -22,7 +25,7 @@ export class GiphyService {
   }
 
   getMoreGifs() {
-    this.offset += 20;
+    this.offset += 40;
     return this.getGifs(this.oldRequest);
   }
 

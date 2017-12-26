@@ -9,7 +9,7 @@ import { GiphyDialogComponent } from './giphy-dialog/giphy-dialog.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  gifs: Array<any>;
+  gifs: Array<any> = [];
   nothingFound = false;
   itsAll = false;
   timeId = null;

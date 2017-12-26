@@ -7,6 +7,7 @@ import { GiphyService } from './giphy-service/giphy.service';
 import { CustomMaterialModule } from './custom-material/custom-material.module';
 import { InfiniteScrollModule } from 'angular2-infinite-scroll';
 import { GiphyDialogComponent } from './giphy-dialog/giphy-dialog.component';
+import { AlertModule } from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { GiphyDialogComponent } from './giphy-dialog/giphy-dialog.component';
     BrowserModule,
     HttpClientModule,
     CustomMaterialModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    AlertModule.forRoot()
   ],
   providers: [GiphyService],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 <div class="giphy-container"
      infinite-scroll
      [infiniteScrollDistance]="2"
-     [infiniteScrollThrottle]="300"
+     [infiniteScrollThrottle]="50"
      (scrolled)="getMoreGifs()">
   <h1>
     Welcome to Giphy-app!
@@ -13,11 +13,13 @@
 
   <h2 *ngIf="nothingFound">Nothing found, try another request</h2>
 
-  <mat-grid-list cols="4" rowHeight="3:2">
-    <mat-grid-tile *ngFor="let gif of gifs" class="gif-img">
-      <img src="{{gif.images.preview_gif.url}}" alt="{{gif.title}}" (click)="openDialog(gif)">
-    </mat-grid-tile>
-  </mat-grid-list>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2 col-xs-4 gif-img" *ngFor="let gif of gifs">
+        <img src="{{gif.images?.preview_gif?.url || gif.images.fixed_height.url}}" alt="{{gif.title}}" (click)="openDialog(gif)">
+      </div>
+    </div>
+  </div>
 
   <h2 *ngIf="itsAll&&!nothingFound">It's all...</h2>
 

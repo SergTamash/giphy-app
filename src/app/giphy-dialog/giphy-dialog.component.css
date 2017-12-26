@@ -1,7 +1,10 @@
 .dialog-title, .img-container {
   text-align: center;
 }
+.img-container {
+  margin-bottom: 20px;
+}
 .img-container img {
-  width: 100%;
   max-width: 100%;
+  max-height: 250px;
 }
