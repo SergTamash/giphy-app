@@ -21,6 +21,16 @@
     </div>
   </div>
 
+  <input #searchBox id="search-box" (keyup)="search2(searchBox.value)" />
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2 col-xs-4 gif-img" *ngFor="let gif of gifs$">
+        <img src="{{gif.images?.preview_gif?.url || gif.images.fixed_height.url}}" alt="{{gif.title}}" (click)="openDialog(gif)">
+      </div>
+    </div>
+  </div>
+
   <h2 *ngIf="itsAll&&!nothingFound">It's all...</h2>
 
 </div>
